@@ -1,10 +1,13 @@
 package com.popov.schedule.repositories;
 
 import com.popov.schedule.models.Day;
-import com.sun.xml.bind.v2.model.core.ID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDate;
+import java.util.Optional;
+
 @Repository
-public interface DayRepository extends JpaRepository<Day, ID> {
+public interface DayRepository extends JpaRepository<Day, Long> {
+    Optional<Day> getDayByLocalDateAndStudentGroupId(LocalDate localDate, Long id);
 }
