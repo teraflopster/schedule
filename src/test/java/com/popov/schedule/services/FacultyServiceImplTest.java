@@ -7,7 +7,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
 import java.util.Optional;
 
 @Slf4j
@@ -27,7 +26,7 @@ class FacultyServiceImplTest {
         facultyService.saveFaculty(faculty);
         Optional<Faculty> facultyFromDB = facultyService.getFacultyByName(faculty.getName());
         facultyFromDB.ifPresent(value -> Assertions.assertEquals(value, faculty));
-        facultyService.deleteById(faculty.getId());
+        facultyService.deleteFacultyById(faculty.getId());
     }
 
     @Test
@@ -36,7 +35,7 @@ class FacultyServiceImplTest {
         facultyService.saveFaculty(faculty);
         Optional<Faculty> facultyFromDB = facultyService.getFacultyById(faculty.getId());
         facultyFromDB.ifPresent(value -> Assertions.assertEquals(value, faculty));
-        facultyService.deleteById(faculty.getId());
+        facultyService.deleteFacultyById(faculty.getId());
     }
 
     @Test
@@ -45,14 +44,14 @@ class FacultyServiceImplTest {
         facultyService.saveFaculty(faculty);
         Optional<Faculty> facultyFromDB = facultyService.getFacultyById(faculty.getId());
         facultyFromDB.ifPresent(value -> Assertions.assertEquals(value, faculty));
-        facultyService.deleteById(faculty.getId());
+        facultyService.deleteFacultyById(faculty.getId());
     }
 
     @Test
     void deleteById() {
         Faculty faculty = new Faculty("NAME");
         facultyService.saveFaculty(faculty);
-        facultyService.deleteById(faculty.getId());
+        facultyService.deleteFacultyById(faculty.getId());
         Optional<Faculty> facultyFromDB = facultyService.getFacultyById(faculty.getId());
         Assertions.assertTrue(facultyFromDB.isEmpty());
     }
