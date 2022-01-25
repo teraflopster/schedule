@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" href="images/favicon.ico">
+</head>
+<body>
+
+<select name="faculty" id="faculty" required="required">
+    <option selected value="">Выберите факультет</option>
+</select>
+
+<select name="department" id="department" required="required">
+    <option selected value="">Выберите кафедру</option>
+</select>
+
+<select name="course" id="course" required="required">
+    <option selected value="">Выберите курс</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+</select>
+
+<select name="group" id="group" required="required">
+    <option selected value="">Выберите групу</option>
+</select>
+
+<select name="day" id="day" required="required">
+    <option selected value="">Выберите дату</option>
+</select>
+
+<div class="lessons" id="lessons">
+
+</div>
+</body>
+<script>
+    window.onload = function () {
+        getFaculty();
+        getDays();
+    }
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+        crossorigin="anonymous">
+</script>
+<script src="js/getFaculty.js"></script>
+<script src="js/getLecture.js"></script>
+<script src="js/getDepartment.js"></script>
+<script src="js/getGroup.js"></script>
+<script src="js/getDays.js"></script>
+</html>
