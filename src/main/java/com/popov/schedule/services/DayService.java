@@ -16,5 +16,4 @@ public interface DayService {
 
     List<Day> getAllDays();
 
-    Optional<Day> getDayByDateAndGroupId(String date, Long id);
 }

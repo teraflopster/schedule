@@ -37,11 +37,4 @@ public class DayServiceImpl implements DayService {
     public List<Day> getAllDays() {
         return dayRepository.findAll();
     }
-
-    @Override
-    public Optional<Day> getDayByDateAndGroupId(String input, Long id) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM.dd.yyyy") ;
-        LocalDate localDate = LocalDate.parse(input, formatter);
-        return dayRepository.getDayByLocalDateAndStudentGroupId(localDate, id);
-    }
 }
