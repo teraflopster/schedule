@@ -2,7 +2,12 @@ package com.popov.schedule.models;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -18,19 +23,15 @@ public class Day {
     @Column(name = "date")
     private LocalDate localDate;
 
-    @Column(name = "student_group_id")
-    private long studentGroupId;
-
     public Day() {}
 
     public Day(String date, long student_group_id) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern( "MM/dd/yyyy" );
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern( "yyyy-MM-dd" );
         this.localDate = LocalDate.parse(date, formatter);
-        this.studentGroupId = student_group_id;
     }
 
     public void setDate(String date){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern( "MM/dd/yyyy" );
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern( "yyyy-MM-dd" );
         this.localDate = LocalDate.parse(date, formatter);
     }
 }
