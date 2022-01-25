@@ -1,8 +1,6 @@
 package com.popov.schedule.services;
 
 import com.popov.schedule.models.Faculty;
-import com.popov.schedule.repositories.FacultyRepository;
-import com.sun.xml.bind.v2.model.core.ID;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +15,7 @@ public interface FacultyService {
 
     Optional<Faculty> getFacultyByName(String name);
 
-    void deleteById(Long id);
+    void deleteFacultyById(Long id);
 
+    List<Faculty> findAllFaculty();
 }
